@@ -15,14 +15,16 @@ class MovieList extends React.Component<IProps> {
     const { movies } = this.props
 
     return (
-      <div>
+      <div className="Container">
         {movies && 
           movies.map((movie: IMovie) => {
             return (
               <Card
+                posterPath={movie.poster_path}
                 releaseDate={movie.release_date}
                 title={movie.title} 
                 overview={movie.overview}
+                rating={movie.vote_average}
               />
             )
           })}
